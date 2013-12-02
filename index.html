@@ -12,9 +12,9 @@ and open the template in the editor.
    
  <style>
 @media only screen 
-and (min-width : 450px) 
-and (max-width : 767px) 
-
+and (min-width : 350px) 
+ 
+and (orientation : landscape)
 { 
 /* Styles landscape*/
 
@@ -79,7 +79,7 @@ and (max-width : 767px)
                 width:90%;
                 z-index :10;
                 height:70%;
-                margin-left:9%;
+                margin-left:8%;
                 margin-top:4%;
             }
             
@@ -217,10 +217,14 @@ and (max-width : 767px)
 
 .success {
     text-align: center;
-    margin:2%;
+    margin:21%;
     font-size: 1.4em;
-    display: none;
+    position:absolute;
+   top:20%;
     color:white;
+    width:60%;
+    z-index:100;
+    display: none;
 }
 
 .moves {
@@ -259,8 +263,8 @@ and (max-width : 767px)
 }
 
 @media only screen 
-and (min-width : 351px) 
-and (max-width : 479px) 
+and (min-width : 350px) 
+and (orientation : portrait) 
 
 { 
 /* Styles portrait medium mobile*/
@@ -297,7 +301,7 @@ and (max-width : 479px)
               }
             
             .card {
-                margin-left:2%;
+                margin-left:4px;
                 moz-transition: all 1.0s linear;
                 transform-style: preserve-3d;
                
@@ -325,7 +329,7 @@ and (max-width : 479px)
                 width:90%;
                 z-index :10;
                 height:70%;
-                margin-left:9%;
+                margin-left:10%;
                 margin-top:4%;
             }
             
@@ -463,10 +467,14 @@ and (max-width : 479px)
 
 .success {
     text-align: center;
-    margin:2%;
+    margin:21%;
     font-size: 1.4em;
-    display: none;
+    position:absolute;
+   top:20%;
     color:white;
+    width:60%;
+    z-index:100;
+     display:none;
 }
 
 .moves {
@@ -506,9 +514,9 @@ and (max-width : 479px)
 
 @media only screen 
 and (min-width : 0px) 
-and (max-width : 350px) {
-/* portrait small */
-
+and (max-width : 350px) 
+and (orientation : portrait)
+{
          
             body {
     margin: 0;
@@ -542,7 +550,7 @@ and (max-width : 350px) {
               }
             
             .card {
-                margin-left:2%;
+                margin-left:4px;
                 moz-transition: all 1.0s linear;
                 transform-style: preserve-3d;
                
@@ -570,7 +578,7 @@ and (max-width : 350px) {
                 width:90%;
                 z-index :10;
                 height:70%;
-                margin-left:9%;
+                margin-left:10%;
                 margin-top:4%;
             }
             
@@ -708,12 +716,15 @@ and (max-width : 350px) {
 
 .success {
     text-align: center;
-    margin:2%;
+    margin:21%;
     font-size: 1.4em;
-    display: none;
+    position:absolute;
+   top:20%;
     color:white;
+    width:60%;
+    z-index:100;
+    display: none;
 }
-
 .moves {
     margin-right: 5%;
     margin-top: 2%;
@@ -817,7 +828,7 @@ and (orientation : portrait)
                 width:90%;
                 z-index :10;
                 height:70%;
-                margin-left:9%;
+                margin-left:10%;
                 margin-top:4%;
             }
             
@@ -955,10 +966,264 @@ and (orientation : portrait)
 
 .success {
     text-align: center;
-    margin:2%;
+    margin:21%;
     font-size: 1.4em;
-    display: none;
+    position:absolute;
+   top:20%;
     color:white;
+    width:60%;
+    z-index:100;
+    display: none;
+}
+
+.moves {
+    margin-right: 5%;
+    margin-top: 2%;
+    float:right;
+    color:white;
+}
+
+.movecounter {
+    display:inline-block;
+}
+
+.restart {
+    color:white;
+    background: #D2691E;
+    border: 1px solid white;
+    width:40%;
+    padding-top:2%;
+    padding-bottom:2%;
+    margin:0 auto;
+    text-align: center;
+}
+
+.yes {
+     color:white;
+    background: #D2691E;
+    border: 1px solid white;
+    width:40%;
+    padding-top:2%;
+    padding-bottom:2%;
+    margin:0 auto;
+    text-align: center;
+    
+}
+}
+
+@media only screen 
+and (min-width : 767px) 
+and (max-width : 1023px)
+and (orientation : landscape)
+/* port*/
+{
+         
+            body {
+    margin: 0;
+    padding: 0;
+}
+
+            .container {
+                margin:0;
+                padding:0;
+                position: absolute;
+                background: #111;
+                width:100%;
+                height:100%;
+                z-index :1;
+            }
+            
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+              }
+            
+          .face.back {
+                display: block;
+                transform: rotateY(180deg);
+                box-sizing: border-box;
+                color: black;
+                text-align: center;
+                background-color: #ccc;
+              }
+            
+            .card {
+                margin-left:4px;
+                moz-transition: all 1.0s linear;
+                transform-style: preserve-3d;
+               
+                text-align: center;
+                background:  chocolate;
+                position: relative;
+                height:20%;
+                width:20%;
+                z-index :11;
+                 
+                display:inline-block;
+                color:white;
+                font-size:4em;
+                cursor:pointer;
+            }
+            
+            /*.card:hover{
+                  transform: rotateY(180deg);
+                
+            }*/
+            
+            .cards {
+                
+                 
+                width:90%;
+                z-index :10;
+                height:70%;
+                margin-left:10%;
+                margin-top:4%;
+            }
+            
+            .circle { 
+                margin: 0 auto;
+                margin-top:4%;
+            width: 40%;
+            height: 83%;
+            background: #CB1D1E; 
+            -moz-border-radius: 70px; 
+            -webkit-border-radius: 70px; 
+            border-radius: 70px;
+           }
+
+           
+           .square {
+                margin: 0 auto;
+                margin-top:10%;
+   width: 29%; 
+   height: 65%; 
+   background: midnightblue; 
+}
+
+.triangle {
+   margin: 0 auto;
+   margin-top:5%;
+   width: 0; 
+   height: 0; 
+   border-bottom: 50px solid #73BD2C; 
+   border-left: 25px solid transparent; 
+   border-right: 25px solid transparent; 
+   color: #73BD2C;
+}
+
+            
+.trap {
+   margin: 0 auto;
+   margin-top:13%;
+   height: 0; 
+   width: 40px;
+   border-bottom: 40px solid #2D9DCD;
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent;
+}
+
+.heart { 
+	position: relative;
+}
+.heart:before, .heart:after {
+	position: absolute;
+        margin-left:29%;
+   margin-top:8%;
+  content: "";
+	left: 30px; top: 0;
+	width: 31px;
+	height: 50px;
+	background: red;
+	-moz-border-radius: 50px 50px 0 0;
+	border-radius: 50px 50px 0 0;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-transform-origin: 0 100%;
+	-moz-transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	-o-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+.heart:after { 
+	left: 0; 
+	-webkit-transform: rotate(45deg); 
+	-moz-transform: rotate(45deg); 
+	-ms-transform: rotate(45deg); 
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	-ms-transform-origin: 100% 100%;
+	-o-transform-origin: 100% 100%;
+	transform-origin :100% 100%;
+}
+
+.pacman {
+    margin: 0 auto;
+   margin-top:6%;
+  width: 0px;
+  height: 0px;
+  border-right: 25px solid transparent;
+  border-top: 25px solid yellow;
+  border-left: 25px solid yellow;
+  border-bottom: 25px solid yellow;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+
+.diamond {
+     margin-left: 50%;
+   margin-top:15%;
+   width: 40px; 
+   height: 40px; 
+   background: #A434D8;
+   
+   /* Rotate */
+   -webkit-transform: rotate(-45deg);
+   -moz-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   /* Rotate Origin */
+   -webkit-transform-origin: 0 100%;
+   -moz-transform-origin: 0 100%;
+   -ms-transform-origin: 0 100%;
+   -o-transform-origin: 0 100%;
+   transform-origin: 0 100%;
+}
+
+.downtriangle { 
+     margin: 0 auto;
+   margin-top:8%;
+   width: 0; 
+   height: 0;
+   border-top: 50px solid #E24EBE;
+   border-left: 25px solid transparent; 
+   border-right: 25px solid transparent; 
+}
+
+.found {
+    cursor:default !important;
+}
+
+.success {
+    text-align: center;
+    margin:21%;
+    font-size: 1.4em;
+    position:absolute;
+   top:20%;
+    color:white;
+    width:60%;
+    z-index:100;
+    display: none;
 }
 
 .moves {
@@ -1059,7 +1324,7 @@ and (min-width : 1024px) {
             .cards {
                 
                  
-                width:90%;
+                width:91%;
                 z-index :10;
                 height:70%;
                 margin-left:9%;
@@ -1200,10 +1465,14 @@ and (min-width : 1024px) {
 
 .success {
     text-align: center;
-    margin:2%;
+    margin:21%;
     font-size: 1.4em;
-    display: none;
+    position:absolute;
+   top:20%;
     color:white;
+    width:60%;
+    z-index:100;
+    display: none;
 }
 
 .moves {
