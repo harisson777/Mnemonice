@@ -1,0 +1,400 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+        <style>
+            
+            body {
+    margin: 0;
+    padding: 0;
+}
+
+            .container {
+                margin:0;
+                padding:0;
+                position: absolute;
+                background: #111;
+                width:100%;
+                height:100%;
+                z-index :1;
+            }
+            
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+              }
+            
+          .face.back {
+                display: block;
+                transform: rotateY(180deg);
+                box-sizing: border-box;
+                color: black;
+                text-align: center;
+                background-color: #ccc;
+              }
+            
+            .card {
+                margin-left:2%;
+                moz-transition: all 1.0s linear;
+                transform-style: preserve-3d;
+               
+                text-align: center;
+                background:  chocolate;
+                position: relative;
+                height:20%;
+                width:20%;
+                z-index :11;
+                 
+                display:inline-block;
+                color:white;
+                font-size:3em;
+                cursor:pointer;
+            }
+            
+            /*.card:hover{
+                  transform: rotateY(180deg);
+                
+            }*/
+            
+            .cards {
+                
+                 
+                width:90%;
+                z-index :10;
+                height:70%;
+                margin-left:9%;
+                margin-top:4%;
+            }
+            
+            .circle { 
+                margin: 0 auto;
+                margin-top:28%;
+            width: 70%;
+            height: 59%;
+            background: #CB1D1E; 
+            -moz-border-radius: 70px; 
+            -webkit-border-radius: 70px; 
+            border-radius: 70px;
+           }
+
+           
+           .square {
+                margin: 0 auto;
+                margin-top:27%;
+   width: 65%; 
+   height: 52%; 
+   background: midnightblue; 
+}
+
+.triangle {
+   margin: 0 auto;
+   margin-top:33%;
+   width: 0; 
+   height: 0; 
+   border-bottom: 30px solid #73BD2C; 
+   border-left: 15px solid transparent; 
+   border-right: 15px solid transparent; 
+   color: #73BD2C;
+}
+
+            
+.trap {
+   margin: 0 auto;
+   margin-top:33%;
+   height: 0; 
+   width: 20px;
+   border-bottom: 20px solid #2D9DCD;
+   border-left: 10px solid transparent;
+   border-right: 10px solid transparent;
+}
+
+.heart { 
+	position: relative;
+}
+.heart:before, .heart:after {
+	position: absolute;
+        margin-left:12%;
+   margin-top:33%;
+  content: "";
+	left: 20px; top: 0;
+	width: 20px;
+	height: 32px;
+	background: red;
+	-moz-border-radius: 50px 50px 0 0;
+	border-radius: 50px 50px 0 0;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-transform-origin: 0 100%;
+	-moz-transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	-o-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+.heart:after { 
+	left: 0; 
+	-webkit-transform: rotate(45deg); 
+	-moz-transform: rotate(45deg); 
+	-ms-transform: rotate(45deg); 
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	-ms-transform-origin: 100% 100%;
+	-o-transform-origin: 100% 100%;
+	transform-origin :100% 100%;
+}
+
+.pacman {
+    margin: 0 auto;
+   margin-top:33%;
+  width: 0px;
+  height: 0px;
+  border-right: 20px solid transparent;
+  border-top: 20px solid yellow;
+  border-left: 20px solid yellow;
+  border-bottom: 20px solid yellow;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+
+.diamond {
+     margin-left: 50%;
+   margin-top:43%;
+   width: 25px; 
+   height: 25px; 
+   background: #A434D8;
+   
+   /* Rotate */
+   -webkit-transform: rotate(-45deg);
+   -moz-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   /* Rotate Origin */
+   -webkit-transform-origin: 0 100%;
+   -moz-transform-origin: 0 100%;
+   -ms-transform-origin: 0 100%;
+   -o-transform-origin: 0 100%;
+   transform-origin: 0 100%;
+}
+
+.downtriangle { 
+     margin: 0 auto;
+   margin-top:33%;
+   width: 0; 
+   height: 0;
+   border-top: 30px solid #E24EBE;
+   border-left: 15px solid transparent; 
+   border-right: 15px solid transparent; 
+}
+
+.found {
+    cursor:default !important;
+}
+
+.success {
+    text-align: center;
+    margin:2%;
+    font-size: 1.4em;
+    display: none;
+    color:white;
+}
+
+.moves {
+    margin-right: 5%;
+    margin-top: 2%;
+    float:right;
+    color:white;
+}
+
+.movecounter {
+    display:inline-block;
+}
+
+.restart {
+    color:white;
+    background: #D2691E;
+    border: 1px solid white;
+    width:40%;
+    padding-top:2%;
+    padding-bottom:2%;
+    margin:0 auto;
+    text-align: center;
+}
+
+.yes {
+     color:white;
+    background: #D2691E;
+    border: 1px solid white;
+    width:40%;
+    padding-top:2%;
+    padding-bottom:2%;
+    margin:0 auto;
+    text-align: center;
+    
+}
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+             
+            <div>
+                <div class='moves'>Moves: <div class='movecounter'>0</div></div>
+            </div>
+            <br>
+            <div class="cards">
+ 
+ 
+            </div>
+            <div class="success">
+                 Success!<BR>
+                 Replay? 
+                 <div class="yes">YES!</div>
+             </div>
+            <div class="restart">
+                Restart
+            </div>
+        </div>
+
+    
+
+
+<script type="text/javascript">  
+    $(document).ready(function(){
+        
+ 
+       var shapes = [   "circle", "circle",
+                        "square", "square",
+                        "triangle", "triangle",
+                        "diamond", "diamond",
+                        "heart", "heart",
+                        "pacman", "pacman"
+                        ,"trap","trap"
+                        ,"downtriangle" ,"downtriangle"];
+                    
+                    
+                  
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+                    shapes = shuffle(shapes);  
+                    
+                    
+    for (var i=0;i<16;i++) {
+           $('.cards').append("<div class='card'><div class='front face'>?</div>\n\
+                                <div class='back face '><div class='"+shapes[i]+"'></div></div></div>")
+           
+       }
+    
+    
+    $(".card").click(function(){
+        opened=$('.opened').length;
+         //console.log(opened)      //gia na min mporei na kanei klik an exoun anoixei 2 
+         if (opened<2) {  
+        
+        
+         if ($(this).hasClass("opened")) { 
+             
+              
+              $(this).removeClass("opened");
+              $(this).css({ 'transform': 'rotateY(0deg)'});
+           
+             
+         } else {
+             
+             if (!$(this).hasClass("found")) { //na einai kleisto kai na MIN einai found!
+                $(this).addClass("opened");
+                $(this).css({ 'transform': 'rotateY(180deg)'});
+                movecounter=$('.movecounter').text();
+                console.log(movecounter)
+                $('.movecounter').text(parseInt(movecounter)+1);
+             }
+         }
+         
+         
+         
+         
+         opened=$('.opened').length;
+         console.log(opened)
+         if (opened==2) {
+             i=1;
+             var pinakas=[];
+             $('.opened').each(function () {
+             $content=$(this).find(".back").contents()
+             element=$content.attr('class');
+              
+             pinakas[i]=element;
+             //console.log(pinakas[i]);
+             i++;
+            
+ 
+            });
+            
+            if (pinakas[1]==pinakas[2]) {
+                $('.opened').each(function () {
+                    $(this).addClass("found");
+                    $(this).css({'opacity':'0'});
+                    $(this).removeClass("opened");
+                    
+                });
+                
+                foundsynolo=$('.found').length;
+                if (foundsynolo==16) {
+                    $('.restart').css({'display':'none'})
+                    $('.success').css({'display':'block'})
+                }
+                
+                
+                
+            } else {
+            
+            setTimeout(function(){//ta kleino
+                $('.opened').css({ 'transform': 'rotateY(0deg)'});
+                $('.opened').removeClass("opened");
+                },1500);
+            }
+         } //telos opened==2
+         
+         
+         }
+         
+    });
+    
+    $(".yes").click(function(){
+    
+    window.location.href=window.location.href;
+    console.log('yes');
+    
+    });
+    
+        $(".restart").click(function(){
+    
+    window.location.href=window.location.href;
+    console.log('yes');
+    
+    });
+
+    
+    });
+    
+</script>
+</body>
+</html>

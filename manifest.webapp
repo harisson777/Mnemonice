@@ -1,0 +1,15 @@
+{
+  "name": "Mnemonice",
+  "description": "Remember the card!",
+  "launch_path": "/index.html",
+  "icons": {
+   
+    "128": "/icon2.png"
+  },
+  "developer": {
+    "name": "Dimitrios Vangelatos",
+    "url": "http://www.oob.gr"
+  },
+  "default_locale": "en"
+}
+
